@@ -1,22 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Parse from 'parse/dist/parse.min.js';
+import { LoginComponent } from './LoginComponent';
+import { RegisterComponent } from './RegistrationComponent';
+
+// Your Parse initialization configuration goes here
+const PARSE_APPLICATION_ID = 'DaQIxkbyt1lhpQXNlr6VMaVAm8gt8fP4D0CSWpDm';
+const PARSE_HOST_URL = 'https://parseapi.back4app.com/';
+const PARSE_JAVASCRIPT_KEY = 'CantoBLPAplvPBikUKkAXKzTcJJdgGYSBf8YDDTy';
+Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
+Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <LoginComponent />
+        <RegisterComponent />
       </header>
     </div>
   );
